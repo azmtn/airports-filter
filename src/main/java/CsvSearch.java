@@ -10,10 +10,9 @@ public class CsvSearch  extends RowListProcessor {
         this.indexToMatch = columnToMatch;
     }
 
-
     @Override
     public void rowProcessed(String[] row, ParsingContext context) {
-        String value = row[indexToMatch - 1];
+        String value = row[indexToMatch];
         if(value != null && value.indexOf(stringToMatch) == 0) {
             super.rowProcessed(row, context);
         }
